@@ -1,14 +1,15 @@
 # Solana Pumpfun Sniper Bot
 
 ## Main Features
+
 - <b>Real-Time Monitoring</b>: Tracks newly launched tokens on Pumpfun.
 - <b>Automated Trading</b>: Executes buy and sell orders based on user-defined settings.
 - <b>Blockchain Interaction</b>: Utilizes the Solana RPC API for seamless blockchain transactions.
 - <b>User Alerts</b>: Sends notifications for all transactions and important events.
 - <b>Comprehensive Logs</b>: Maintains detailed records of all trading activity for user review.
 
-
 ## Tech stack
+
 - Typescript
 - Node.js
 - Mongodb
@@ -86,15 +87,6 @@ response: 500
 
 ## Dashboard
 
-- POST `/token/mark-read`
-
-```js
-request: {
-  id: id;
-}
-```
-
-- POST `/token/mark-all-read`
 - GET `/token/:time/`
 
 ```js
@@ -102,7 +94,6 @@ response: 200
 {
   data: pumpfunTokenData[],
   total: 100,
-  alerts: alerts[],
   offset: 0,
   limit: 10,
 }
@@ -184,6 +175,7 @@ request: {
 ## Assets
 
 - GET `/assets/`
+
 ```js
 {
   calcTable: {
@@ -230,6 +222,7 @@ request: {
   limit: number,
 }
 ```
+
 - GET `/assets/wallet`
 
 ```js
@@ -360,12 +353,48 @@ response: (200)[
 ];
 ```
 
+- GET `/transactions/new-alerts`
+
+```js
+[
+  {
+    imageUrl: string;
+    title: string;
+    content: string;
+    link: string;
+    time: number;
+    isRead: boolean;
+  }
+]
+```
+
+- POST `/transactions/mark-read`
+
+```js
+request: {
+  id: id;
+}
+```
+
+- POST `/transactions/mark-all-read`
+
+```js
+{
+  success: boolean,
+  modifiedCount: number
+}
+```
+
 ## Logs
 
 - GET `/logs/all`
-  {
+
+```js
+{
   logs: string[],
-  }
+}
+```
+
 - GET `/logs/info`
 
 ```js
@@ -387,8 +416,6 @@ response: 200;
   message: "Logs removed successfully";
 }
 ```
-
-
 
 ## Version 1.0, 29/1/2025
 
