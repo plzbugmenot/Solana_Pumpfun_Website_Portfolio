@@ -1,5 +1,9 @@
 # Solana Pumpfun Sniper Bot
 
+## video
+
+https://github.com/user-attachments/assets/9be0b2dc-6513-413f-a7a4-e4424c20bac3
+
 ## Main Features
 
 - <b>Real-Time Monitoring</b>: Tracks newly launched tokens on Pumpfun.
